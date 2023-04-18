@@ -26,7 +26,7 @@ module.exports = {
         allowNull: false
       },
       foto: {
-        type: Sequelize.DataTypes.BLOB
+        type: Sequelize.DataTypes.BLOB('medium')
       },
       cpf: {
         type: Sequelize.DataTypes.STRING(11),

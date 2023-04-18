@@ -22,7 +22,7 @@ class Usuario extends Model {
                 type: DataTypes.STRING
             },
             foto: {
-                type: DataTypes.BLOB
+                type: DataTypes.BLOB('medium')
             },
             cpf: {
                 type: DataTypes.STRING
