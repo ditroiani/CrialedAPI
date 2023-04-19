@@ -22,7 +22,7 @@ module.exports = {
         primaryKey: true
       },
       nome: {
-        type: Sequelize.DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING(100),
         allowNull: false
       },
       foto: {
@@ -34,7 +34,7 @@ module.exports = {
         allowNull: false
       },
       email: {
-        type: Sequelize.DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING(50),
         allowNull: false,
         unique: true
       },
@@ -42,7 +42,7 @@ module.exports = {
         type: Sequelize.DataTypes.ENUM(departamento)
       },
       password: {
-        type: Sequelize.DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING(30),
         allowNull: false
       },
       created_at: {
