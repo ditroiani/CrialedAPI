@@ -24,7 +24,7 @@ class Instalacao extends Model {
       {
         id: {
           type: DataTypes.INTEGER,
-          autoIncrement: false,
+          autoIncrement: true,
           primaryKey: true,
         },
         razao_social: {
@@ -34,15 +34,19 @@ class Instalacao extends Model {
         cnpj: {
           type: DataTypes.STRING(15),
           unique: true,
+          allowNull: false,
         },
         categoria: {
           type: DataTypes.ENUM(categoria),
+          allowNull: false,
         },
         logo: {
-          type: DataTypes.BLOB,
+          type: DataTypes.BLOB("medium"),
+          allowNull: false,
         },
         observacoes: {
           type: DataTypes.STRING(255),
+          allowNull: false,
         },
       },
       {

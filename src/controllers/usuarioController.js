@@ -38,7 +38,11 @@ class UsuarioController {
   async find(req, res) {
     try {
       const { id } = req.params;
-      const usuario = await Usuario.findByPk(id);
+      const usuario = await Usuario.findByPk(id, {
+        attributes: ["nome", "cpf", "email", "departamento", "created_at"],
+      });
+
+      res.status(200).json(usuario);
     } catch (error) {
       return res.status(400).json({
         err: "Cannot get Usuario",
