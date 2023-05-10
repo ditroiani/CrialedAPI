@@ -1,24 +1,25 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 
-const categoria = [
-  "Entretenimento",
-  "Financeiro",
-  "Posto de Combustível",
-  "Conveniência",
-  "Servços Automotivos",
-  "Vestuario",
-  "Alimenticio",
-  "Restaurante",
-  "Bar",
-  "Supermercado",
-  "Clinica",
-  "Drogaria",
-  "Imobiliária",
-  "Construção",
-  "Religioso",
-];
-
 class Instalacao extends Model {
+  // Categoria
+  static categoria = [
+    "Entretenimento",
+    "Financeiro",
+    "Posto de Combustível",
+    "Conveniência",
+    "Servços Automotivos",
+    "Vestuario",
+    "Alimenticio",
+    "Restaurante",
+    "Bar",
+    "Supermercado",
+    "Clinica",
+    "Drogaria",
+    "Imobiliária",
+    "Construção",
+    "Religioso",
+  ];
+
   static init(sequelize) {
     super.init(
       {
@@ -37,7 +38,7 @@ class Instalacao extends Model {
           allowNull: false,
         },
         categoria: {
-          type: DataTypes.ENUM(categoria),
+          type: DataTypes.ENUM(Instalacao.categoria),
           allowNull: false,
         },
         logo: {

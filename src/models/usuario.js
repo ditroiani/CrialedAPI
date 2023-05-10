@@ -1,16 +1,17 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
 
-const departamento = [
-  "Diretoria",
-  "Gestor",
-  "Coordenador",
-  "Logistica",
-  "Comercial",
-  "Analista de Suporte",
-  "Tecnico",
-];
-
 class Usuario extends Model {
+  // Departamentos
+  static cdepartamentos = [
+    "Diretoria",
+    "Gestor",
+    "Coordenador",
+    "Logistica",
+    "Comercial",
+    "Analista de Suporte",
+    "Tecnico",
+  ];
+
   static init(sequelize) {
     super.init(
       {
@@ -36,7 +37,7 @@ class Usuario extends Model {
           allowNull: false,
         },
         departamento: {
-          type: DataTypes.ENUM(departamento),
+          type: DataTypes.ENUM(Usuario.departamentos),
           allowNull: false,
         },
         password: {
