@@ -1,6 +1,6 @@
 // Imports 
 import { Router } from 'express'
-import usuarioController from '../controllers/usuarioController.js'
+import usuarioController from '../controllers/usuario-controller.js'
 
 // Router handler
 const router = new Router()

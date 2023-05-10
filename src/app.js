@@ -3,8 +3,8 @@ import express from "express";
 import "dotenv/config";
 
 // Routes imports
-import indexRoute from "./routes/indexRoute.js";
-import usuarioRoute from "./routes/usuarioRoute.js";
+import indexRoute from "./routes/index-route.js";
+import usuarioRoute from "./routes/usuario-route.js";
 import("./database/connection.js");
 
 class App {

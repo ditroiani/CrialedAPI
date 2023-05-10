@@ -1,6 +1,6 @@
 // Imports
 import { Router } from 'express'
-import indexController from '../controllers/indexController.js'
+import indexController from '../controllers/index-controller.js'
 
 // Router Handler
 const router = new Router()
