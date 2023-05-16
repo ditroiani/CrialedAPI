@@ -1,6 +1,6 @@
 class Utils {
   // Validador de CPF
-  validaCPF(cpf) {
+  static validarCPF(cpf) {
     const cpfSemPontos = cpf.replace(/\D/g, "");
 
     if (cpfSemPontos.length !== 11) {
@@ -46,7 +46,7 @@ class Utils {
   }
 
   // Outra função
-  verificarEmail() {}
+  static verificarEmail() {}
 }
 
 export default Utils;

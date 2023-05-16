@@ -1,8 +1,9 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
+import utils from "../utils/utils.js";
 
 class Usuario extends Model {
   // Departamentos
-  static cdepartamentos = [
+  static departamentos = [
     "Diretoria",
     "Gestor",
     "Coordenador",
@@ -31,10 +32,32 @@ class Usuario extends Model {
         cpf: {
           type: DataTypes.STRING(11),
           allowNull: false,
+          get() {
+            return this.getDataValue("cpf").replace(
+              /(\d{3})(\d{3})(\d{3})(\d{2})/,
+              "$1.$2.$3-$4"
+            );
+          },
+          set(val) {
+            this.setDataValue("cpf", val.replace(/\D/g, ""));
+          },
+          validate: {
+            isCPFValido() {
+              if (!utils.validarCPF(this.cpf)) {
+                throw new Error("CPF inválido");
+              }
+            },
+          },
         },
         email: {
           type: DataTypes.STRING(50),
           allowNull: false,
+          validate: {
+            isEmail: {
+              args: true,
+              msg: "O e-mail deve ter um formato válido!"
+            },
+          },
         },
         departamento: {
           type: DataTypes.ENUM(Usuario.departamentos),
